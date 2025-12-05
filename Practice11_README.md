@@ -117,10 +117,11 @@ This implementation addresses all grading criteria:
 
 1. **Why undersampling instead of SMOTE for SVM?**
    - SMOTE creates synthetic samples, greatly increasing dataset size
-   - SVM training time is O(n²) to O(n³) in sample size
+   - SVM training time complexity ranges from O(n²) to O(n³) depending on implementation (where n is the number of samples)
+   - Modern implementations like SMO are more efficient but still scale poorly with large datasets
    - With 284,807 samples, oversampling would create 400,000+ samples
-   - This makes SVM training prohibitively slow
-   - Undersampling reduces to ~1,000 samples, keeping training fast
+   - This makes SVM training prohibitively slow even with efficient algorithms
+   - Undersampling reduces to ~1,000 samples, keeping training fast and practical
 
 2. **Kernel Selection**
    - Linear kernel: Faster, good for linearly separable data
